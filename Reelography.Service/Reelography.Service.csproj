@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <LangVersion>13</LangVersion>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Reelography.Data\Reelography.Data.csproj" />
+      <ProjectReference Include="..\Reelography.Dto\Reelography.Dto.csproj" />
+      <ProjectReference Include="..\Reelography.Entities\Reelography.Entities.csproj" />
+      <ProjectReference Include="..\Reelography.Shared\Reelography.Shared.csproj" />
+    </ItemGroup>
+
+</Project>

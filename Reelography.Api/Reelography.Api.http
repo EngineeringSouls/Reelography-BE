@@ -1,0 +1,6 @@
+@Reelography.Api_HostAddress = http://localhost:5186
+
+GET {{Reelography.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reelography.Entities", "Reelography.Entities\Reelography.Entities.csproj", "{C074A258-4DB3-4E15-9E40-EEA866A06D44}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reelography.Dto", "Reelography.Dto\Reelography.Dto.csproj", "{F92FEDE1-607E-48A4-A74C-00134B4DCDF1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reelography.Service", "Reelography.Service\Reelography.Service.csproj", "{978CFB26-9C0E-4B57-9893-F4165B70A03E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reelography.Data", "Reelography.Data\Reelography.Data.csproj", "{5F910DD0-53F2-45CD-A4F6-DB4E5D69DD0C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reelography.Shared", "Reelography.Shared\Reelography.Shared.csproj", "{BA46B16B-56CC-4C21-8E3E-DFC3B0518089}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reelography.Api", "Reelography.Api\Reelography.Api.csproj", "{AF247D91-7376-46CC-AA9C-0D644C6316FD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C074A258-4DB3-4E15-9E40-EEA866A06D44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C074A258-4DB3-4E15-9E40-EEA866A06D44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C074A258-4DB3-4E15-9E40-EEA866A06D44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C074A258-4DB3-4E15-9E40-EEA866A06D44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F92FEDE1-607E-48A4-A74C-00134B4DCDF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F92FEDE1-607E-48A4-A74C-00134B4DCDF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F92FEDE1-607E-48A4-A74C-00134B4DCDF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F92FEDE1-607E-48A4-A74C-00134B4DCDF1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{978CFB26-9C0E-4B57-9893-F4165B70A03E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{978CFB26-9C0E-4B57-9893-F4165B70A03E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{978CFB26-9C0E-4B57-9893-F4165B70A03E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{978CFB26-9C0E-4B57-9893-F4165B70A03E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F910DD0-53F2-45CD-A4F6-DB4E5D69DD0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F910DD0-53F2-45CD-A4F6-DB4E5D69DD0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F910DD0-53F2-45CD-A4F6-DB4E5D69DD0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F910DD0-53F2-45CD-A4F6-DB4E5D69DD0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA46B16B-56CC-4C21-8E3E-DFC3B0518089}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA46B16B-56CC-4C21-8E3E-DFC3B0518089}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA46B16B-56CC-4C21-8E3E-DFC3B0518089}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA46B16B-56CC-4C21-8E3E-DFC3B0518089}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF247D91-7376-46CC-AA9C-0D644C6316FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF247D91-7376-46CC-AA9C-0D644C6316FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF247D91-7376-46CC-AA9C-0D644C6316FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF247D91-7376-46CC-AA9C-0D644C6316FD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
