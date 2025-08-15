@@ -1,111 +1,167 @@
-using Microsoft.AspNetCore.Http.Features;
+using System.Reflection;
+using System.Security.Claims;
+using System.Text;
+using System.Text.Json;
+using System.Text.Json.Serialization;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
-using Microsoft.OpenApi.Models;
+using Microsoft.IdentityModel.Tokens;
 using Reelography.Api.Helper;
 using Reelography.Data;
-using Reelography.Service.Contracts.Master;
-using Reelography.Service.Contracts.Photographer;
-using Reelography.Service.External;
-using Reelography.Service.External.Contracts;
-using Reelography.Service.Master;
-using Reelography.Service.Photographer;
-using Reelography.Shared.Options;
+using Reelography.Dto;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// DB
-var connectionString = builder.Configuration.GetConnectionString("DbConnection");
-SqlHelper.ConnectionString = connectionString;
-builder.Services.AddDbContext<ReelographyDbContext>(options =>
-    options.UseSqlServer(SqlHelper.GetConnection(), sql =>
-    {
-        sql.EnableRetryOnFailure();
-        sql.MigrationsAssembly(typeof(ReelographyDbContext).Assembly.FullName);
-    }), ServiceLifetime.Transient);
 
-// MVC + Swagger
+#region Enable Swagger
+
+if (builder.Configuration.GetValue<bool>("App:EnableSwagger"))
+{
+    builder.Services.AddOpenApi();
+    builder.Services.AddSwaggerGen(options =>
+    {
+        var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+        var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+        options.IncludeXmlComments(xmlPath);
+
+        // ✅ Add JWT Bearer Auth to Swagger
+        var securityScheme = new Microsoft.OpenApi.Models.OpenApiSecurityScheme
+        {
+            Name = "Authorization",
+            Type = Microsoft.OpenApi.Models.SecuritySchemeType.Http,
+            Scheme = "bearer",
+            BearerFormat = "JWT",
+            In = Microsoft.OpenApi.Models.ParameterLocation.Header,
+            Description = "JWT Authorization header using the Bearer scheme.",
+            Reference = new Microsoft.OpenApi.Models.OpenApiReference
+            {
+                Type = Microsoft.OpenApi.Models.ReferenceType.SecurityScheme,
+                Id = "Bearer"
+            }
+        };
+        options.AddSecurityDefinition("Bearer", securityScheme);
+        options.AddSecurityRequirement(new Microsoft.OpenApi.Models.OpenApiSecurityRequirement
+        {
+            {
+                securityScheme,
+                Array.Empty<string>()
+            }
+        });
+    });
+}
+
+#endregion
+
+
+// Add Controller and Endpoint Support
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen(c =>
-{
-    c.SwaggerDoc("v1", new OpenApiInfo { Title = "Reelography API", Version = "v1" });
 
-    // Bearer auth
-    c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddScoped<IUserContext, HttpUserContext>();
+
+builder.Services.AddAuthentication(options =>
     {
-        In = ParameterLocation.Header,
-        Description = "JWT Authorization header. Example: Bearer {token}",
-        Name = "Authorization",
-        Type = SecuritySchemeType.Http,
-        Scheme = "bearer",
-        BearerFormat = "JWT"
-    });
-    c.AddSecurityRequirement(new OpenApiSecurityRequirement
+        options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+        options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+    })
+    .AddJwtBearer(options =>
     {
+        options.TokenValidationParameters = new TokenValidationParameters
         {
-            new OpenApiSecurityScheme { Reference = new OpenApiReference { Type = ReferenceType.SecurityScheme, Id = "Bearer" } },
-            Array.Empty<string>()
-        }
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+
+            ValidIssuer = builder.Configuration["Jwt:Issuer"],
+            ValidAudience = builder.Configuration["Jwt:Audience"],
+            IssuerSigningKey = new SymmetricSecurityKey(
+                Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Secret"]!)
+            ),
+            RoleClaimType = ClaimTypes.Role 
+        };
+    });
+
+builder.Services.AddAuthorization(options =>
+{
+    // Requires “role” claim with value “Admin”
+    options.AddPolicy("AdminOnly", policy =>
+        policy.RequireRole("Admin"));
+
+    // Requires “role” claim with value “User”
+    options.AddPolicy("UserOnly", policy =>
+        policy.RequireRole("User"));
+    
+    options.AddPolicy("PhotographerOnly", policy =>
+        policy.RequireRole("Photographer"));
+
+    // Either role
+    options.AddPolicy("UserOrAdmin", policy =>
+        policy.RequireRole("User", "Admin"));
+});
+
+// ====================
+// 🔧 JSON Options (System.Text.Json)
+// ====================
+builder.Services.Configure<JsonSerializerOptions>(options =>
+{
+    options.AllowTrailingCommas = true;
+    options.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull;
+    options.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;
+    options.PropertyNameCaseInsensitive = true;
+});
+
+// ====================
+// 📦 Swagger Setup (Conditionally enabled)
+// ====================
+if (builder.Configuration.GetValue<bool>("App:EnableSwagger"))
+{
+    builder.Services.AddOpenApi(); // your extension method
+    builder.Services.AddSwaggerGen(options =>
+    {
+        var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+        var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+        options.IncludeXmlComments(xmlPath);
+    });
+}
+// ====================
+// CORS Policy Update
+// ====================
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(policy =>
+    {
+        policy.AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader();
     });
 });
 
-// CORS (if calling directly from http://localhost:3000 without Next rewrites)
-builder.Services.AddCors(o => o.AddPolicy("Dev", p => p
-    .WithOrigins("http://localhost:3000")
-    .AllowAnyHeader()
-    .AllowAnyMethod()
-    .AllowCredentials()));
+// ====================
+// 🗄️ SQL Database Setup
+// ====================
+var connectionString = builder.Configuration.GetConnectionString("DbConnection");
+SqlHelper.ConnectionString = connectionString;
 
-// External services
-builder.Services.Configure<GooglePlacesOptions>(builder.Configuration.GetSection("GooglePlaces"));
-builder.Services.AddHttpClient<IGooglePlacesService, GooglePlacesService>();
-
-// Program.cs (before Build())
-builder.Services.Configure<BunnyStorageOptions>(builder.Configuration.GetSection("BunnyStorage"));
-builder.Services.Configure<BunnyStreamOptions>(builder.Configuration.GetSection("BunnyStream"));
-builder.Services.AddHttpClient<IStorageService, BunnyHybridStorageService>();
+builder.Services.AddDbContext<ReelographyDbContext>(options =>
+    options.UseSqlServer(SqlHelper.GetConnection(), sqlOptionsBuilder =>
+    {
+        sqlOptionsBuilder.EnableRetryOnFailure();
+        sqlOptionsBuilder.MigrationsAssembly(typeof(ReelographyDbContext).Assembly.FullName);
+        //sqlOptionsBuilder.UseNetTopologySuite();
+    }));
 
 
-builder.Services.Configure<InstagramOptions>(builder.Configuration.GetSection("Instagram"));
-builder.Services.AddScoped<IInstagramService, InstagramService>();
-// ---- Application services ----
-builder.Services.AddScoped<IPhotographerRegistrationService, PhotographerRegistrationService>();
-builder.Services.AddScoped<IOccasionPackageMappingService, OccasionPackageMappingService>();
-builder.Services.AddScoped<IPhotographerService, PhotographerService>();
 
-// ---- (Optional) allow large multipart uploads for portfolio/videos ----
-builder.Services.Configure<FormOptions>(o =>
-{
-    o.MultipartBodyLengthLimit = 2L * 1024 * 1024 * 1024; // 2 GB
-});
-
-builder.Services.AddOptions<InstagramOptions>()
-    .Bind(builder.Configuration.GetSection("Instagram"))
-    .Validate(o => !string.IsNullOrWhiteSpace(o.ClientId), "Instagram ClientId missing")
-    .Validate(o => !string.IsNullOrWhiteSpace(o.ClientSecret), "Instagram ClientSecret missing")
-    .Validate(o => !string.IsNullOrWhiteSpace(o.RedirectUri), "Instagram RedirectUri missing")
-    .Validate(o => !string.IsNullOrWhiteSpace(o.Scopes), "Instagram Scopes missing")
-    .ValidateOnStart();
-
-builder.Services.AddOptions<OAuthOptions>()
-    .Bind(builder.Configuration.GetSection("OAuth"))
-    .Validate(o => !string.IsNullOrWhiteSpace(o.StateSecret), "StateSecret missing")
-    .ValidateOnStart();
+builder.Services.AddOpenApi();
 
 var app = builder.Build();
 
-// Swagger UI
-app.UseSwagger();
-app.UseSwaggerUI(c =>
+if (app.Environment.IsDevelopment())
 {
-    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Reelography API v1");
-    c.RoutePrefix = "swagger"; // http://localhost:5186/swagger
-});
+    app.MapOpenApi();
+}
 
-// Pipeline
 app.UseHttpsRedirection();
-app.UseCors("Dev");
-// app.UseMiddleware<JwtAuthMiddleware>(); // keep this if already added (it allowlists /swagger)
-app.MapControllers();
 app.Run();
