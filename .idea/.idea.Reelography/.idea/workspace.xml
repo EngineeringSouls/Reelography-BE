@@ -8,7 +8,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="781193da-8775-42e0-8855-de833b151799" name="Changes" comment="" />
+    <list default="true" id="781193da-8775-42e0-8855-de833b151799" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Reelography.Data/ReelographyDbContext.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reelography.Data/ReelographyDbContextFactory.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reelography.Dto/HttpUserContext.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reelography.Dto/IUserContext.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reelography.Dto/User/UserClaimDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reelography.Entities/BaseEntity.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reelography.Entities/User/AuthUser.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reelography.Entities/User/Photographer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reelography.Entities/User/User.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reelography.Service/Helpers/SqlHelper.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reelography.Shared/Enums/User/UserRoleEnum.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reelography.Api/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Reelography.Api/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reelography.Api/Reelography.Api.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Reelography.Api/Reelography.Api.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reelography.Data/Reelography.Data.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Reelography.Data/Reelography.Data.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reelography.Dto/Reelography.Dto.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Reelography.Dto/Reelography.Dto.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reelography.Entities/Reelography.Entities.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Reelography.Entities/Reelography.Entities.csproj" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,10 +34,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Reelography.Api/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Reelography.Api/appsettings.Development.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Reelography.Api/appsettings.json" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2zwArDBUHXIiSFv7gVwsHauPBc0" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -29,7 +54,7 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "feature/user-context-setup",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",

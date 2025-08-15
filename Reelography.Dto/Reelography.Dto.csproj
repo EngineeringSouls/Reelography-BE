@@ -7,4 +7,14 @@
         <LangVersion>13</LangVersion>
     </PropertyGroup>
 
+    <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.3.0" />
+        <PackageReference Include="System.Security.Claims" Version="4.3.0" />
+
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Reelography.Shared\Reelography.Shared.csproj" />
+    </ItemGroup>
+
 </Project>
