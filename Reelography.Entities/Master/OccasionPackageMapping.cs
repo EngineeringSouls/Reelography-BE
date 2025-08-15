@@ -10,11 +10,11 @@ public class OccasionPackageMapping: BaseEntity
     public required int Id { get; init; }    
     
     public int OccasionId { get; set; }
-    public OccasionType? OccasionType { get; set; } = null!;
+    public OccasionType? OccasionType { get; set; }
 
     public int? ServicePackageTypeId { get; set; }
     public ServicePackageType? ServicePackageType { get; set; }
 
     public int PricingUnitId { get; set; }
-    public PricingUnitType? PricingUnitType { get; set; } = null!;
+    public PricingUnitType? PricingUnitType { get; set; }
 }

@@ -16,13 +16,14 @@ public class PhotographerInstagramDetail
     public int Id { get; set; }
     
     public required int PhotographerId { get; set; }
-    public required string IgHandle { get; set; }
-    public required string IgToken { get; set; }
-    public int IgFollowers { get; set; }
-    public int IgMonthlyViews { get; set; }
+    public required string BusinessAccountId { get; set; }
+    public required string LongLivedUserAccessToken { get; set; }
+    public required DateTime TokenExpiresOnUtc { get; set; }
+    public required DateTime TokenCreatedAt { get; set; }
+    public required DateTime TokenLastRefreshedAt { get; set; }
     
-    public DateTime TokenCreatedAt { get; set; }
-    public DateTime TokenLastRefreshedAt { get; set; }
+    public double FollowersCount { get; set; }
+    public double AverageMonthlyViews { get; set; }
     
     [ForeignKey(nameof(PhotographerId)), DeleteBehavior(DeleteBehavior.Restrict)]
     public virtual Photographer? Photographer { get; set; }

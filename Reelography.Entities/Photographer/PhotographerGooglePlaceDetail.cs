@@ -8,7 +8,7 @@ namespace Reelography.Entities;
 /// </summary>
 
 [Table("PhotographerGooglePlaceDetails", Schema = "photographer")]
-public class PhotographerGooglePlaceDetail
+public class PhotographerGooglePlaceDetail: BaseEntity
 {
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -16,19 +16,23 @@ public class PhotographerGooglePlaceDetail
     
     public required int PhotographerId { get; set; }
     
-    public required int GooglePlaceId { get; set; }
+    public required string GooglePlaceId { get; set; }
     
-    [MaxLength(120)] public required string LocationName { get; set; }
-    [MaxLength(120)] public required string StreetName { get; set; }
-    [MaxLength(120)] public required string City { get; set; }
-    [MaxLength(120)] public required string District { get; set; }
-    [MaxLength(120)] public required string State { get; set; }
-
-    public double Lat { get; set; }
-    public double Lang { get; set; }
+    public required string FormattedAddress { get; set; }
+    
+    [MaxLength(120)] public string? Line1 { get; set; }
+    [MaxLength(120)] public string? Line2 { get; set; }
+    [MaxLength(80)] public string? City { get; set; }
+    [MaxLength(80)] public string? State { get; set; }
+    [MaxLength(80)] public string? Country { get; set; }
+    [MaxLength(20)] public string? Postal { get; set; }
+    public double? Lat { get; set; }
+    public double? Lng { get; set; }
     
     public decimal AverageRating { get; set; }
     public int TotalReviewCount { get; set; }
     
+    [ForeignKey(nameof(PhotographerId))]
+    public virtual Photographer? Photographer { get; set; }
     public ICollection<PhotographerGooglePlaceReview>? PhotographerGoogleReviews { get; set; }
 }

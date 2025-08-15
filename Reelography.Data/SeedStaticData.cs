@@ -8,14 +8,27 @@ namespace Reelography.Data;
 public class SeedStaticData
 {
     private static readonly DateTime Date = DateTime.MinValue;
-    public static void SeedOccasionTypes(ModelBuilder modelBuilder)
+    public static void SeedAppStaticData(ModelBuilder modelBuilder)
+    {
+        SeedOccasionTypes(modelBuilder);
+        SeedPricingUnitTypes(modelBuilder);
+        SeedPhotographerTypes(modelBuilder);
+        SeedMediaTypes(modelBuilder);
+        SeedMediaSources(modelBuilder);
+        SeedServicePackageTypes(modelBuilder);
+        SeedOccasionPackageMappings(modelBuilder);
+        SeedPhotographerOnboardingSteps(modelBuilder);
+    }
+    
+    private static void SeedOccasionTypes(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<OccasionType>().HasData(
             Enum.GetValues<OccasionEnum>()
                 .Select(e => new OccasionType()
                 {
                     Id = (int)e,
-                    Name = e.GetDescription(),
+                    Name = e.ToString(),
+                    Description = e.GetDescription(),
                     CreatedBy = "System-SeedData",
                     CreatedOn = Date,
                     IsActive = true,
@@ -23,21 +36,22 @@ public class SeedStaticData
                 }).ToArray()
         );
     }
-    public static void SeedPricingUnitTypes(ModelBuilder modelBuilder)
+    private static void SeedPricingUnitTypes(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<PricingUnitType>().HasData(
             Enum.GetValues<PricingUnitEnum>()
                 .Select(e => new PricingUnitType()
                 {
                     Id = (int)e,
-                    Code = e.ToString(),
+                    Name = e.ToString(),
+                    Description = e.GetDescription(),
                     CreatedBy = "System-SeedData",
                     CreatedOn = Date,
                     IsActive = true
                 }).ToArray()
         );
     }
-    public static void SeedPhotographerTypes(ModelBuilder modelBuilder)
+    private static void SeedPhotographerTypes(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<PhotographerType>().HasData(
             Enum.GetValues<PhotographerTypeEnum>()
@@ -52,7 +66,7 @@ public class SeedStaticData
                 }).ToArray()
         );
     }
-    public static void SeedMediaTypes(ModelBuilder modelBuilder)
+    private static void SeedMediaTypes(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<MediaType>().HasData(
             Enum.GetValues<MediaTypeEnum>()
@@ -67,7 +81,7 @@ public class SeedStaticData
                 }).ToArray()
         );
     }
-    public static void SeedMediaSources(ModelBuilder modelBuilder)
+    private static void SeedMediaSources(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<MediaSource>().HasData(
             Enum.GetValues<MediaSourceEnum>()
@@ -83,7 +97,7 @@ public class SeedStaticData
         );
     }
     
-    public static void SeedServicePackageTypes(ModelBuilder modelBuilder)
+    private static void SeedServicePackageTypes(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<ServicePackageType>().HasData(
             Enum.GetValues<ServicePackageEnum>()
@@ -103,7 +117,7 @@ public class SeedStaticData
     /// Seeding data for wedding for default packages (silver, gold etc..)
     /// </summary>
     /// <param name="modelBuilder"></param>
-    public static void SeedOccasionPackageMappings(ModelBuilder modelBuilder)
+    private static void SeedOccasionPackageMappings(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<OccasionPackageMapping>().HasData(
             Enum.GetValues<ServicePackageEnum>()
@@ -115,6 +129,27 @@ public class SeedStaticData
                     PricingUnitId = (int)PricingUnitEnum.PerPackage,
                     CreatedBy = "System-SeedData",
                     CreatedOn = Date,
+                }).ToArray()
+        );
+    }
+    
+    
+    /// <summary>
+    /// Seeding data for wedding for default packages (silver, gold etc..)
+    /// </summary>
+    /// <param name="modelBuilder"></param>
+    private static void SeedPhotographerOnboardingSteps(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<PhotographerOnboardingStep>().HasData(
+            Enum.GetValues<PhotographerOnboardingStatusEnum>()
+                .Select(e => new PhotographerOnboardingStep()
+                {
+                    Id = (int)e,
+                    Name = e.ToString(),
+                    Description = e.GetDescription(),
+                    CreatedBy = "System-SeedData",
+                    CreatedOn = Date,
+                    IsActive = true
                 }).ToArray()
         );
     }

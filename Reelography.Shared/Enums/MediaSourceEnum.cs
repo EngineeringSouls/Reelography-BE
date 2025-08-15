@@ -4,9 +4,9 @@ namespace Reelography.Shared.Enums;
 
 public enum MediaSourceEnum
 {
-    [Description("Instagram")]
+    [Description("Synced from Instagram")]
     Instagram = 1,
     
-    [Description("Self-Upload")]
-    SelfUpload
+    [Description("Manually uploaded")]
+    Manual
 }

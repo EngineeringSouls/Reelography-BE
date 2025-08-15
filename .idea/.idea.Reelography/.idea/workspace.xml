@@ -9,47 +9,91 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="781193da-8775-42e0-8855-de833b151799" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Reelography.Api/Helper/SqlHelper.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Data/ReelographyDbContext.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Data/ReelographyDbContextFactory.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Data/SeedStaticData.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Entities/BaseEntity.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Entities/Master/MediaSource.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Entities/Master/MediaType.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Entities/Master/OccasionPackageMapping.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Entities/Master/OccasionType.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Entities/Master/PricingUnitType.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Entities/Master/ServicePackageType.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Entities/Photographer/FavouritePhotographer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Entities/Photographer/Photographer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Entities/Photographer/PhotographerGooglePlaceDetail.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Entities/Photographer/PhotographerGooglePlaceReview.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Entities/Photographer/PhotographerInAppReview.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Entities/Photographer/PhotographerInstagramDetail.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Entities/Photographer/PhotographerPackageDetail.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Entities/Photographer/PhotographerPortfolio.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Entities/Photographer/PhotographerType.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Shared/Enums/MediaSourceEnum.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Shared/Enums/MediaTypeEnum.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Shared/Enums/OccasionEnum.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Shared/Enums/PhotographerTypeEnum.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Shared/Enums/PricingUnitEnum.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Shared/Enums/ServicePackageEnum.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Shared/Extensions/EnumExtension.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Reelography/.idea/projectSettingsUpdater.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Reelography/.idea/projectSettingsUpdater.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reelography.Api/Controllers/Master/OccasionPackageMappingController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reelography.Api/Controllers/Photographer/PhotographerController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reelography.Api/Controllers/Photographer/PhotographerInstagramController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reelography.Api/Controllers/Photographer/PhotographerRegistrationController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reelography.Dto/Master/MasterDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reelography.Dto/Master/OccasionDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reelography.Dto/Master/OccasionPackageMappingDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reelography.Dto/Master/PricingUnitDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reelography.Dto/Master/ServicePackagesDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reelography.Dto/Photographers/Registration/Request/PhotographerAddPackageRequestDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reelography.Dto/Photographers/Registration/Request/PhotographerAddPackagesListRequestDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reelography.Dto/Photographers/Registration/Request/PhotographerAddPortfolioItemRequestDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reelography.Dto/Photographers/Registration/Request/PhotographerAddPortfolioListItemsRequestDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reelography.Dto/Photographers/Registration/Request/PhotographerBasicDetailsRequestDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reelography.Dto/Photographers/Registration/Request/PhotographerInstagramDetailDTO.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reelography.Dto/Photographers/Registration/Request/PhotographerRegistrationStateDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reelography.Dto/Photographers/Registration/Response/PhotographerBasicDetailsResponseDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reelography.Dto/Photographers/Registration/Response/PhotographerPackageResponseDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reelography.Dto/Photographers/Registration/Response/PhotographerPortfolioItemResponseDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reelography.Entities/EnumBaseEntity.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reelography.Entities/Photographer/PhotographerOnboardingStep.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reelography.Service/Contracts/Master/IOccasionPackageMappingService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reelography.Service/Contracts/Photographer/IPhotographerRegistrationService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reelography.Service/Contracts/Photographer/IPhotographerService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reelography.Service/External/BunnyHybridStorageService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reelography.Service/External/Contracts/IGooglePlacesService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reelography.Service/External/Contracts/IInstagramService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reelography.Service/External/Contracts/IStorageService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reelography.Service/External/GooglePlacesService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reelography.Service/External/InstagramService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reelography.Service/Helper/StateToken.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reelography.Service/Master/OccasionPackageMappingService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reelography.Service/Photographer/PhotographerRegistrationService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reelography.Service/Photographer/PhotographerService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reelography.Shared/Enums/PhotographerOnboardingStatusEnum.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reelography.Shared/Options/BunnyStorageOptions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reelography.Shared/Options/BunnyStreamOptions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reelography.Shared/Options/GooglePlacesOptions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reelography.Shared/Options/InstagramOptions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reelography.Shared/Options/OAuthOptions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reelography.Shared/Records/GooglePlaceDetails.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reelography.Shared/Records/GooglePlaceReview.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reelography.Shared/Records/InstagramAuthUrls.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reelography.Shared/Records/InstagramMediaItem.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reelography.Shared/Records/InstagramPageInfo.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reelography.Shared/Records/InstagramUserProfileWithMedia.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reelography.Shared/Records/StorageDumpResult.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Reelography/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Reelography/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Reelography.Api/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Reelography.Api/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Reelography.Api/Reelography.Api.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Reelography.Api/Reelography.Api.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Reelography.Api/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Reelography.Api/appsettings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Reelography.Data/Reelography.Data.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Reelography.Data/Reelography.Data.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reelography.Entities/Reelography.Entities.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Reelography.Entities/Reelography.Entities.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reelography.Data/ReelographyDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Reelography.Data/ReelographyDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reelography.Data/SeedStaticData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Reelography.Data/SeedStaticData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reelography.Dto/Reelography.Dto.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Reelography.Dto/Reelography.Dto.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reelography.Entities/BaseEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Reelography.Entities/BaseEntity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reelography.Entities/Master/MediaSource.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Reelography.Entities/Master/MediaSource.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reelography.Entities/Master/MediaType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Reelography.Entities/Master/MediaType.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reelography.Entities/Master/OccasionPackageMapping.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Reelography.Entities/Master/OccasionPackageMapping.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reelography.Entities/Master/OccasionType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Reelography.Entities/Master/OccasionType.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reelography.Entities/Master/PricingUnitType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Reelography.Entities/Master/PricingUnitType.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reelography.Entities/Photographer/FavouritePhotographer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Reelography.Entities/Photographer/FavouritePhotographer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reelography.Entities/Photographer/Photographer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Reelography.Entities/Photographer/Photographer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reelography.Entities/Photographer/PhotographerGooglePlaceDetail.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Reelography.Entities/Photographer/PhotographerGooglePlaceDetail.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reelography.Entities/Photographer/PhotographerGooglePlaceReview.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Reelography.Entities/Photographer/PhotographerGooglePlaceReview.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reelography.Entities/Photographer/PhotographerInstagramDetail.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Reelography.Entities/Photographer/PhotographerInstagramDetail.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reelography.Entities/Photographer/PhotographerPackageDetail.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Reelography.Entities/Photographer/PhotographerPackageDetail.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reelography.Entities/Photographer/PhotographerPortfolio.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Reelography.Entities/Photographer/PhotographerPortfolio.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reelography.Service/Reelography.Service.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Reelography.Service/Reelography.Service.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reelography.Shared/Enums/MediaSourceEnum.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Reelography.Shared/Enums/MediaSourceEnum.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DpaMonitoringSettings">
+    <option name="firstShow" value="false" />
+  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -64,6 +108,14 @@
     &quot;accountId&quot;: &quot;d41d6c6d-3739-46a5-abe8-b4153937524f&quot;
   }
 }</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c96e563a8d0c4079b5ccda3089469c801e6800/34/5d63027d/JsonSerializer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/6728f66657329080f0f419df519283a455cdca7d2617a05b18553b02da52fa/Nullable.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/bf9021a960b74107a7e141aa06bc9d8a0a53c929178c2fb95b1597be8af8dc/ExceptionDispatchInfo.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/db7395f4add94e6d10e515b3e55373f2821f8323de7dc8e314d78feefacf5584/ActionMethodExecutor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/e5ace92664429b8b34b68b587316fb211811b58aeb53422b43cecca2ad2bdaf3/AsyncTaskMethodBuilderT.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
@@ -75,19 +127,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    ".NET Launch Settings Profile.Reelography.Api: http.executor": "Debug",
+    "Attach to Process.1361:JetBrains.Roslyn.Worker.executor": "Debug",
+    "Attach to Process.1734:JetBrains.Roslyn.Worker.executor": "Debug",
+    "Attach to Process.2594:JetBrains.Roslyn.Worker.executor": "Debug",
+    "Attach to Process.75791:JetBrains.Roslyn.Worker.executor": "Debug",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "#9 on InitialMigrationAndEntities",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected=".NET Launch Settings Profile.Reelography.Api: http">
     <configuration name="Reelography.Api: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Reelography.Api/Reelography.Api.csproj" />
@@ -133,16 +190,55 @@
       <workItem from="1752913741785" duration="4454000" />
       <workItem from="1752918268048" duration="8873000" />
       <workItem from="1752991026961" duration="1786000" />
-      <workItem from="1753782265230" duration="8856000" />
+      <workItem from="1753782265230" duration="9740000" />
+      <workItem from="1754803086933" duration="27853000" />
+      <workItem from="1754965721826" duration="36666000" />
+      <workItem from="1755097081343" duration="32164000" />
+      <workItem from="1755228023372" duration="10877000" />
     </task>
+    <task id="LOCAL-00001" summary="Adding initial changes for entities and migrations">
+      <option name="closed" value="true" />
+      <created>1754500981317</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1754500981317</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/InitialMigrationAndEntities" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="Adding initial changes for entities and migrations" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding initial changes for entities and migrations" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -159,6 +255,19 @@
           <properties exception="System.Threading.ThreadAbortException" breakIfHandledByOtherCode="false" displayValue="System.Threading.ThreadAbortException" />
           <option name="timeStamp" value="3" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Reelography.Service/External/BunnyHybridStorageService.cs</url>
+          <line>90</line>
+          <properties documentPath="$PROJECT_DIR$/Reelography.Service/External/BunnyHybridStorageService.cs" containingFunctionPresentation="Method 'PutVideoUsingRemoteUrlAsync'">
+            <startOffsets>
+              <option value="4455" />
+            </startOffsets>
+            <endOffsets>
+              <option value="4516" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="40" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

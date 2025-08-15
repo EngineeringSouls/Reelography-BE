@@ -9,7 +9,7 @@ namespace Reelography.Data;
 public class ReelographyDbContext: DbContext
 {
     /// <summary>
-    /// 
+    /// ReelographyDbContext
     /// </summary>
     /// <param name="options"></param>
     public ReelographyDbContext(DbContextOptions<ReelographyDbContext> options) : base(options){}
@@ -71,13 +71,7 @@ public class ReelographyDbContext: DbContext
 
         #region  SeedData
 
-        SeedStaticData.SeedOccasionTypes(modelBuilder);
-        SeedStaticData.SeedPricingUnitTypes(modelBuilder);
-        SeedStaticData.SeedPhotographerTypes(modelBuilder);
-        SeedStaticData.SeedMediaTypes(modelBuilder);
-        SeedStaticData.SeedMediaSources(modelBuilder);
-        SeedStaticData.SeedServicePackageTypes(modelBuilder);
-        SeedStaticData.SeedOccasionPackageMappings(modelBuilder);
+        SeedStaticData.SeedAppStaticData(modelBuilder);
 
         #endregion
 

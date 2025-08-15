@@ -11,8 +11,7 @@ public class FavouritePhotographer: BaseEntity
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public required int Id { get; set; }
     
-    public required int AppUserId { get; set; }
-    
+    public required int UserId { get; set; }
     public required int PhotographerId { get; set; }
     
     public DateTime AddedAt { get; set; }

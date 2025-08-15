@@ -7,9 +7,9 @@ namespace Reelography.Entities;
 /// </summary>
 public abstract class BaseEntity
 {
-    public DateTime CreatedOn { get; set; } 
+    public required DateTime CreatedOn { get; set; } 
     [StringLength(500)]
-    public string CreatedBy { get; set; } = null!;
+    public required string CreatedBy { get; set; }
     public  DateTime? ModifiedOn { get; set; }
     [StringLength(500)]
     public string? ModifiedBy { get; set; }
