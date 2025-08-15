@@ -13,6 +13,7 @@ public class PhotographerPackageDetail: BaseEntity
     
     public required int PhotographerId { get; set; }
     public required int OccasionPackageMappingId { get; set; }
+    public string? Title { get; set; }
     public string?  Description { get; set; }
     
     [Precision(10,2)]
@@ -23,6 +24,6 @@ public class PhotographerPackageDetail: BaseEntity
     public virtual Photographer? Photographer { get; set; }
     
     [ForeignKey(nameof(OccasionPackageMappingId)), DeleteBehavior(DeleteBehavior.Restrict)]
-    public required OccasionPackageMapping  OccasionPackageMapping { get; set; }
+    public virtual OccasionPackageMapping?  OccasionPackageMapping { get; set; }
 
 }

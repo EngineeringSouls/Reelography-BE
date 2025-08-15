@@ -10,12 +10,10 @@ namespace Reelography.Entities;
 /// </summary>
 
 [Table("OccasionTypes", Schema = "master")]
-public class OccasionType: BaseEntity
+public class OccasionType: EnumBaseEntity
 {
     [Key]
     public required int Id { get; init; }
-    [StringLength(50)]
-    public required string Name { get; init; }
     public required bool IsActive { get; set; }
     public required bool IsPremium { get; set; }
     
