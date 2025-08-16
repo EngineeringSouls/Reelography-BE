@@ -20,7 +20,7 @@ public class UserService:IUserService
 
     public async Task<UserClaimDto> GetUserClaimDto(int userId, CancellationToken cancellationToken = default)
     {
-        var user = await _dbContext.AuthUsers
+        var user = await _dbContext.AuthUsers.Include(col=>col.AuthUserRole)
             .AsNoTracking()
             .SingleOrDefaultAsync(u => u.Id == userId, cancellationToken: cancellationToken);
         if(user == null)
@@ -30,7 +30,7 @@ public class UserService:IUserService
             Id = user.Id,
             Name = $"{user.FirstName} {user.LastName}",
             Email = user.Email,
-            Roles = []
+            Role = user.AuthUserRole.Role,
         };
     }
 }

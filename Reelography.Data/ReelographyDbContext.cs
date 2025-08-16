@@ -15,6 +15,8 @@ public class ReelographyDbContext: DbContext
     /// <param name="options"></param>
     public ReelographyDbContext(DbContextOptions<ReelographyDbContext> options) : base(options){}
 
+    public DbSet<DeviceSession> DeviceSessions { get; set; }
+    
     #region  master
     
     public DbSet<MediaSource>  MediaSources { get; set; }
@@ -79,6 +81,18 @@ public class ReelographyDbContext: DbContext
         SeedStaticData.SeedAppStaticData(modelBuilder);
 
         #endregion
-
+        
+       
     }
+    
+    
+    #region Private
+
+    private void ConfigureUser(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<AuthUser>()
+            .Navigation(u => u.AuthUserRole)
+            .AutoInclude();
+    }
+    #endregion
 }

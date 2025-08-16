@@ -37,23 +37,23 @@ public class HttpUserContext(IHttpContextAccessor http) : IUserContext
             var emailClaim = user.Claims
                 .FirstOrDefault(c => c.Type == ClaimTypes.Email)
                 ?.Value;
-            var roleClaims = user.Claims
+            var roleClaim = user.Claims
                 .Where(c => c.Type == ClaimTypes.Role)
                 .Select(c =>
                 {
-                    if (Enum.TryParse<UserRoleEnum>(c.Value, out var parsed))
+                    if (Enum.TryParse<AuthUserRoleEnum>(c.Value, out var parsed))
                         return (int)parsed;
                     return (int?)null;
                 })
                 .Where(r => r.HasValue)
                 .Select(r => r!.Value)
-                .ToList();
+                .FirstOrDefault();
 
             return new UserClaimDto
             {
                 Id    = int.TryParse(idClaim!, out var id) ? id : 0,
                 Email = emailClaim!,
-                Roles = roleClaims
+                Role = (AuthUserRoleEnum)roleClaim
             };
         }
     }

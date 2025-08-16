@@ -2,6 +2,8 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Reelography.Api.Contents;
 using Reelography.Api.Helper;
+using Reelography.Dto;
+using Reelography.Service.Contracts;
 using Reelography.Service.Contracts.User;
 
 namespace Reelography.Api.Controllers;
@@ -15,22 +17,44 @@ namespace Reelography.Api.Controllers;
 /// <param name="authHelper"></param>
 [Route("api/auth")]
 [ApiController]
-public class AuthController(ILoggerFactory loggerFactory, IUserService userService, AuthHelper authHelper)
+public class AuthController(ILoggerFactory loggerFactory,
+    IUserService userService,
+    AuthHelper authHelper,
+    IAuthService authService)
     :ControllerBase
 {
     private readonly ILogger<AuthController> _logger = loggerFactory.CreateLogger<AuthController>();
+
     /// <summary>
     /// Generates the jwt token against the given user id
     /// </summary>
-    /// <param name="userId"></param>
+    /// <param name="id"></param>
+    /// <param name="deviceId"></param>
+    /// <param name="cancellationToken"></param>
     /// <returns></returns>
     [HttpGet("generate-token")]
     [AllowAnonymous]
-    public async Task<IActionResult> GenerateToken([FromQuery] int userId)
+    public async Task<IActionResult> GenerateToken([FromQuery] int id,
+        [FromQuery] string deviceId, 
+        CancellationToken cancellationToken = default)
     {
-        var user = await userService.GetUserClaimDto(userId);
+        var user = await userService.GetUserClaimDto(id, cancellationToken);
         var token = authHelper.GenerateJwtToken(user);
-        return Ok(ApiResponse.SuccessResponse(token));
+        var refreshToken = authHelper.GenerateRefreshToken();
+        await authService.InsertRefreshTokenAsync(refreshToken, user.Id,deviceId);
+        return Ok(ApiResponse.SuccessResponse(new  TokenDto{ Token = token, RefreshToken = refreshToken }));
     }
-
+    
+    [HttpGet("refresh-token")]
+    [AllowAnonymous]
+    public async Task<IActionResult> RefreshToken([FromQuery] int id,
+        [FromQuery] string deviceId, 
+        CancellationToken cancellationToken = default)
+    {
+        var user = await userService.GetUserClaimDto(id, cancellationToken);
+        var token = authHelper.GenerateJwtToken(user);
+        var refreshToken = authHelper.GenerateRefreshToken();
+        await authService.InsertRefreshTokenAsync(refreshToken, user.Id,deviceId);
+        return Ok(ApiResponse.SuccessResponse(new  TokenDto{ Token = token, RefreshToken = refreshToken }));
+    }
 }

@@ -8,10 +8,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="User\" />
-    </ItemGroup>
-
-    <ItemGroup>
       <ProjectReference Include="..\Reelography.Shared\Reelography.Shared.csproj" />
     </ItemGroup>
 

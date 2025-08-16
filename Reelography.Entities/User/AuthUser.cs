@@ -51,5 +51,5 @@ public class AuthUser: IdentityUser<int>
     
     public virtual User? User { get; set; }
     public virtual Photographer? Photographer { get; set; }
-
+    public AuthUserRole AuthUserRole { get; set; } = null!;
 }

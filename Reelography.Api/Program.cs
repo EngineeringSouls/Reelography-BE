@@ -59,7 +59,6 @@ builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddScoped<IUserContext, HttpUserContext>();
-
 builder.Services.AddAuthentication(options =>
     {
         options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -73,15 +72,40 @@ builder.Services.AddAuthentication(options =>
             ValidateAudience = true,
             ValidateLifetime = true,
             ValidateIssuerSigningKey = true,
-
             ValidIssuer = builder.Configuration["Jwt:Issuer"],
             ValidAudience = builder.Configuration["Jwt:Audience"],
             IssuerSigningKey = new SymmetricSecurityKey(
                 Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Secret"]!)
             ),
-            RoleClaimType = ClaimTypes.Role 
+            RoleClaimType = ClaimTypes.Role
+        };
+
+        options.Events = new JwtBearerEvents
+        {
+            OnTokenValidated = async ctx =>
+            {
+                var claims = ctx.Principal!;
+                var userId = claims.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+                var deviceId = claims.FindFirst("device_id")?.Value;
+
+                if (string.IsNullOrEmpty(userId) || string.IsNullOrEmpty(deviceId))
+                {
+                    ctx.Fail("Invalid token: missing device.");
+                    return;
+                }
+
+                // OPTIONAL: validate against your DeviceSession table
+                var db = ctx.HttpContext.RequestServices.GetRequiredService<ReelographyDbContext>();
+                var valid = await db.DeviceSessions
+                    .AnyAsync(s => s.AuthUserId.ToString() == userId && s.DeviceId == deviceId && !s.Revoked);
+                if (!valid)
+                {
+                    ctx.Fail("Invalid or revoked session.");
+                }
+            }
         };
     });
+
 
 builder.Services.AddAuthorization(options =>
 {

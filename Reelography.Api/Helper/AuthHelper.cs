@@ -1,5 +1,6 @@
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
+using System.Security.Cryptography;
 using System.Text;
 using Microsoft.IdentityModel.Tokens;
 using Reelography.Dto.User;
@@ -42,25 +43,20 @@ public class AuthHelper
         var key         = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_secret));
         var credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
-        // 2) Build claims
         var claims = new List<Claim>
         {
-            new Claim(JwtRegisteredClaimNames.Sub,user.Id.ToString()),
+            new Claim(JwtRegisteredClaimNames.Sub, user.Id.ToString()),
             new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
-            new Claim(JwtRegisteredClaimNames.UniqueName,    user.Name)
+            new Claim(JwtRegisteredClaimNames.UniqueName, user.Name),
+            new Claim(ClaimTypes.Role, user.Role.ToString())
         };
-        foreach (var roleInt in user.Roles)
-        {
-            // if you have an enum UserRoleEnum { User = 1, Admin = 2, … }
-            var roleName = ((UserRoleEnum)roleInt).ToString();
-            claims.Add(new Claim(ClaimTypes.Role, roleName));
-        }
-        if (!string.IsNullOrEmpty(user.Email))
-        {
-            claims.Add(new Claim(ClaimTypes.Email, user.Email));
-        }
 
-        // 3) Create token descriptor
+        if (!string.IsNullOrEmpty(user.Email))
+            claims.Add(new Claim(ClaimTypes.Email, user.Email));
+
+        if (!string.IsNullOrEmpty(user.DeviceId))
+            claims.Add(new Claim("device_id", user.DeviceId)); // custom claim
+
         var now = DateTime.UtcNow;
         var descriptor = new SecurityTokenDescriptor
         {
@@ -71,10 +67,17 @@ public class AuthHelper
             Audience           = _audience,
             SigningCredentials = credentials
         };
-
-        // 4) Create & write token
         var handler = new JwtSecurityTokenHandler();
         var token   = handler.CreateToken(descriptor);
         return handler.WriteToken(token);
     }
+
+    public string GenerateRefreshToken()
+    {
+        var randomBytes = new byte[64];
+        using var rng = RandomNumberGenerator.Create();
+        rng.GetBytes(randomBytes);
+        return Convert.ToBase64String(randomBytes);
+    }
+
 }

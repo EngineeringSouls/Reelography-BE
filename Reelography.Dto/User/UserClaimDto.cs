@@ -1,3 +1,5 @@
+using Reelography.Shared.Enums.User;
+
 namespace Reelography.Dto.User;
 
 /// <summary>
@@ -7,6 +9,7 @@ public class UserClaimDto
 {
     public int Id { get; set; }
     public string Name { get; set; } = null!;
-    public List<int> Roles { get; set; } = [];
+    public AuthUserRoleEnum Role { get; set; }
     public string? Email { get; set; }
+    public string? DeviceId { get; set; }
 }
