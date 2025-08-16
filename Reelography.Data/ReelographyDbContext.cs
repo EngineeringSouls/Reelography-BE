@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Reelography.Entities;
+using Reelography.Entities.User;
 
 namespace Reelography.Data;
 
@@ -37,6 +38,10 @@ public class ReelographyDbContext: DbContext
     public DbSet<PhotographerPortfolio>  PhotographerPortfolios { get; set; }
     public DbSet<PhotographerType>  PhotographerTypes { get; set; }
 
+    #endregion
+    
+    #region User
+    public DbSet<AuthUser>  AuthUsers { get; set; }
     #endregion
     
     /// <summary>

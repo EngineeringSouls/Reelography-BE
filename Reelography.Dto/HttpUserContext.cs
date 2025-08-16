@@ -51,7 +51,7 @@ public class HttpUserContext(IHttpContextAccessor http) : IUserContext
 
             return new UserClaimDto
             {
-                Id    = idClaim!,
+                Id    = int.TryParse(idClaim!, out var id) ? id : 0,
                 Email = emailClaim!,
                 Roles = roleClaims
             };

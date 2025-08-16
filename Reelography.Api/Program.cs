@@ -95,10 +95,6 @@ builder.Services.AddAuthorization(options =>
     
     options.AddPolicy("PhotographerOnly", policy =>
         policy.RequireRole("Photographer"));
-
-    // Either role
-    options.AddPolicy("UserOrAdmin", policy =>
-        policy.RequireRole("User", "Admin"));
 });
 
 // ====================
@@ -151,8 +147,6 @@ builder.Services.AddDbContext<ReelographyDbContext>(options =>
         sqlOptionsBuilder.MigrationsAssembly(typeof(ReelographyDbContext).Assembly.FullName);
         //sqlOptionsBuilder.UseNetTopologySuite();
     }));
-
-
 
 builder.Services.AddOpenApi();
 

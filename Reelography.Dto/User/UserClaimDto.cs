@@ -5,7 +5,7 @@ namespace Reelography.Dto.User;
 /// </summary>
 public class UserClaimDto
 {
-    public string Id { get; set; } = null!;
+    public int Id { get; set; }
     public string Name { get; set; } = null!;
     public List<int> Roles { get; set; } = [];
     public string? Email { get; set; }
