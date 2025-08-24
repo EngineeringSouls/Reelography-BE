@@ -1,5 +1,3 @@
-
-// Reelography.Services/Registration/PhotographerRegistrationService.cs
 using Microsoft.EntityFrameworkCore;
 using Reelography.Data;
 using Reelography.Dto.Photographers.Registration.Request;
