@@ -12,6 +12,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reelography.Shared", "Reelo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reelography.Api", "Reelography.Api\Reelography.Api.csproj", "{AF247D91-7376-46CC-AA9C-0D644C6316FD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reelography.Notification", "Reelography.Notification\Reelography.Notification.csproj", "{09F24F98-6D4C-4F47-8649-75DBABCE90BA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,5 +44,9 @@ Global
 		{AF247D91-7376-46CC-AA9C-0D644C6316FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF247D91-7376-46CC-AA9C-0D644C6316FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AF247D91-7376-46CC-AA9C-0D644C6316FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09F24F98-6D4C-4F47-8649-75DBABCE90BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09F24F98-6D4C-4F47-8649-75DBABCE90BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09F24F98-6D4C-4F47-8649-75DBABCE90BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09F24F98-6D4C-4F47-8649-75DBABCE90BA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

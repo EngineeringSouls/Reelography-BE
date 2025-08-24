@@ -9,11 +9,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="781193da-8775-42e0-8855-de833b151799" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Reelography.Api/Configuration/ServiceConfiguration.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reelography.Api/Controllers/NotificationServiceController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reelography.Dto/Notification/OtpRequestDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reelography.Dto/Notification/OtpValidateRequestDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reelography.Notification/Interfaces/IEmailService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reelography.Notification/Interfaces/INotificationService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reelography.Notification/Interfaces/ISmsService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reelography.Notification/Interfaces/ITemplateLoaderService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reelography.Notification/Interfaces/IWhatsAppService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reelography.Notification/NotificationServiceBase.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reelography.Notification/Services/EmailService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reelography.Notification/Services/NotificationService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reelography.Notification/Services/SmsService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reelography.Notification/Services/TemplateLoaderService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reelography.Notification/Services/WhatsAppService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reelography.Notification/Templates/Email/Otp.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reelography.Notification/Templates/SMS/Otp.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reelography.Notification/Templates/WhatsApp/Otp.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reelography.Shared/Constants/ErrorMessages.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reelography.Shared/Constants/NotificationConstants.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reelography.Shared/Enums/Notification/NotificationChannelTypeEnum.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reelography.Shared/Enums/Notification/NotificationPriorityTypeEnum.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reelography.Shared/StaticHelpers/NotificationHelper.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Reelography/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Reelography/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reelography.Api/Controllers/AuthController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Reelography.Api/Controllers/AuthController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Reelography.Api/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Reelography.Api/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Reelography.Api/Reelography.Api.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Reelography.Api/Reelography.Api.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reelography.Dto/HttpUserContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Reelography.Dto/HttpUserContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reelography.Dto/Reelography.Dto.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Reelography.Dto/Reelography.Dto.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reelography.Api/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/Reelography.Api/appsettings.Development.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reelography.Api/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Reelography.Api/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reelography.sln" beforeDir="false" afterPath="$PROJECT_DIR$/Reelography.sln" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,24 +87,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Launch Settings Profile.Reelography.Api: http.executor": "Debug",
-    "Attach to Process.1361:JetBrains.Roslyn.Worker.executor": "Debug",
-    "Attach to Process.1734:JetBrains.Roslyn.Worker.executor": "Debug",
-    "Attach to Process.2594:JetBrains.Roslyn.Worker.executor": "Debug",
-    "Attach to Process.75791:JetBrains.Roslyn.Worker.executor": "Debug",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "feature/user-context-setup",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Launch Settings Profile.Reelography.Api: http.executor&quot;: &quot;Debug&quot;,
+    &quot;Attach to Process.1361:JetBrains.Roslyn.Worker.executor&quot;: &quot;Debug&quot;,
+    &quot;Attach to Process.1734:JetBrains.Roslyn.Worker.executor&quot;: &quot;Debug&quot;,
+    &quot;Attach to Process.2594:JetBrains.Roslyn.Worker.executor&quot;: &quot;Debug&quot;,
+    &quot;Attach to Process.75791:JetBrains.Roslyn.Worker.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature/user-context-setup&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.Reelography.Api: http">
     <configuration name="Reelography.Api: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Reelography.Api/Reelography.Api.csproj" />
@@ -130,7 +155,9 @@
       <workItem from="1754965721826" duration="36666000" />
       <workItem from="1755097081343" duration="32164000" />
       <workItem from="1755228023372" duration="10877000" />
-      <workItem from="1755248465372" duration="336000" />
+      <workItem from="1755248465372" duration="7712000" />
+      <workItem from="1755519338461" duration="1910000" />
+      <workItem from="1756008533492" duration="11440000" />
     </task>
     <task id="LOCAL-00001" summary="Adding initial changes for entities and migrations">
       <option name="closed" value="true" />
@@ -180,17 +207,95 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Reelography.Service/External/BunnyHybridStorageService.cs</url>
-          <line>90</line>
-          <properties documentPath="$PROJECT_DIR$/Reelography.Service/External/BunnyHybridStorageService.cs" containingFunctionPresentation="Method 'PutVideoUsingRemoteUrlAsync'">
+          <url>file://$PROJECT_DIR$/Reelography.Notification/Services/NotificationService.cs</url>
+          <line>20</line>
+          <properties documentPath="$PROJECT_DIR$/Reelography.Notification/Services/NotificationService.cs" containingFunctionPresentation="Method 'SendOtpNotificationAsync'">
             <startOffsets>
-              <option value="4455" />
+              <option value="721" />
             </startOffsets>
             <endOffsets>
-              <option value="4516" />
+              <option value="767" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="40" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Reelography.Api/Controllers/NotificationServiceController.cs</url>
+          <line>34</line>
+          <properties documentPath="$PROJECT_DIR$/Reelography.Api/Controllers/NotificationServiceController.cs" containingFunctionPresentation="Method 'RequestOtp'">
+            <startOffsets>
+              <option value="1083" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1084" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Reelography.Api/Controllers/NotificationServiceController.cs</url>
+          <line>49</line>
+          <properties documentPath="$PROJECT_DIR$/Reelography.Api/Controllers/NotificationServiceController.cs" containingFunctionPresentation="Method 'ValidateOtp'">
+            <startOffsets>
+              <option value="1663" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1664" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Reelography.Notification/Services/SmsService.cs</url>
+          <line>13</line>
+          <properties documentPath="$PROJECT_DIR$/Reelography.Notification/Services/SmsService.cs" containingFunctionPresentation="Method 'SendOtpNotificationAsync'">
+            <startOffsets>
+              <option value="547" />
+            </startOffsets>
+            <endOffsets>
+              <option value="548" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Reelography.Notification/Services/TemplateLoaderService.cs</url>
+          <line>10</line>
+          <properties documentPath="$PROJECT_DIR$/Reelography.Notification/Services/TemplateLoaderService.cs" containingFunctionPresentation="Method 'LoadTemplate'">
+            <startOffsets>
+              <option value="430" />
+            </startOffsets>
+            <endOffsets>
+              <option value="541" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Reelography.Notification/Services/NotificationService.cs</url>
+          <line>44</line>
+          <properties documentPath="$PROJECT_DIR$/Reelography.Notification/Services/NotificationService.cs" containingFunctionPresentation="Method 'ValidateOtpRequestAsync'">
+            <startOffsets>
+              <option value="1758" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1804" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Reelography.Notification/Services/SmsService.cs</url>
+          <line>25</line>
+          <properties documentPath="$PROJECT_DIR$/Reelography.Notification/Services/SmsService.cs" containingFunctionPresentation="Method 'SendOtpNotificationAsync'">
+            <startOffsets>
+              <option value="996" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1036" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

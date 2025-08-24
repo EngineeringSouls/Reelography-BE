@@ -6,6 +6,7 @@ using System.Text.Json.Serialization;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using Reelography.Api.Configuration;
 using Reelography.Api.Helper;
 using Reelography.Data;
 using Reelography.Dto;
@@ -51,7 +52,6 @@ if (builder.Configuration.GetValue<bool>("App:EnableSwagger"))
 }
 
 #endregion
-
 
 // Add Controller and Endpoint Support
 builder.Services.AddControllers();
@@ -132,6 +132,7 @@ builder.Services.Configure<JsonSerializerOptions>(options =>
     options.PropertyNameCaseInsensitive = true;
 });
 
+
 // ====================
 // 📦 Swagger Setup (Conditionally enabled)
 // ====================
@@ -172,14 +173,55 @@ builder.Services.AddDbContext<ReelographyDbContext>(options =>
         //sqlOptionsBuilder.UseNetTopologySuite();
     }));
 
-builder.Services.AddOpenApi();
+builder.Services.RegisterServices(); // register DI
 
 var app = builder.Build();
 
-if (app.Environment.IsDevelopment())
+app.UseCors();
+// ====================
+// 📡 Routing
+// ====================
+app.UseRouting();
+
+// ====================
+// 🌍 Environment-specific Settings
+// ====================
+if (!app.Environment.IsDevelopment())
 {
-    app.MapOpenApi();
+    app.UseHsts();
 }
 
+// ====================
+// 📊 Swagger Middleware & Root Redirect
+// ====================
+if (builder.Configuration.GetValue<bool>("App:EnableSwagger"))
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+
+    app.Use(async (context, next) =>
+    {
+        if (context.Request.Path == "/")
+        {
+            context.Response.Redirect("/swagger");
+            return;
+        }
+        await next();
+    });
+}
+
+
+app.UseAuthentication(); // ✅ This is mandatory before UseAuthorization
+
+// ✅ Built-in ASP.NET Core middleware required for `[Authorize]` to work
+app.UseAuthorization(); 
+// ====================
+// 🧱 Other Middleware
+// ====================
 app.UseHttpsRedirection();
+
+// ====================
+// ✅ Endpoint Mapping (must come last)
+// ====================
+app.MapControllers();
 app.Run();

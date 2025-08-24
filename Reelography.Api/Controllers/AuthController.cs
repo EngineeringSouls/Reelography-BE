@@ -45,7 +45,7 @@ public class AuthController(ILoggerFactory loggerFactory,
         return Ok(ApiResponse.SuccessResponse(new  TokenDto{ Token = token, RefreshToken = refreshToken }));
     }
     
-    [HttpGet("refresh-token")]
+    [HttpGet("token")]
     [AllowAnonymous]
     public async Task<IActionResult> RefreshToken([FromQuery] int id,
         [FromQuery] string deviceId, 
@@ -57,4 +57,5 @@ public class AuthController(ILoggerFactory loggerFactory,
         await authService.InsertRefreshTokenAsync(refreshToken, user.Id,deviceId);
         return Ok(ApiResponse.SuccessResponse(new  TokenDto{ Token = token, RefreshToken = refreshToken }));
     }
+
 }
