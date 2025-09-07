@@ -14,12 +14,23 @@ using Reelography.Shared.Options;
 
 namespace Reelography.Api.Configuration;
 
+/// <summary>
+/// Service Configuration Extension class
+/// </summary>
 public static class ServiceConfiguration
 {
+    /// <summary>
+    /// Extension method to register the services
+    /// </summary>
+    /// <param name="builder"></param>
     public static void RegisterServices(this WebApplicationBuilder builder)
     {
         builder.Services.AddScoped<AuthHelper>();
         RegisterGooglePlacesServices(builder);
+        RegisterBunnyStorageServices(builder);
+        RegisterIntsaServices(builder);
+        RegisterPhotographerServices(builder);
+        
         RegisterUserServices(builder);
         RegisterNotificationServices(builder);
 
