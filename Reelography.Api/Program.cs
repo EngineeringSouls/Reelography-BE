@@ -173,7 +173,7 @@ builder.Services.AddDbContext<ReelographyDbContext>(options =>
         //sqlOptionsBuilder.UseNetTopologySuite();
     }));
 
-builder.Services.RegisterServices(); // register DI
+builder.RegisterServices(); 
 
 var app = builder.Build();
 

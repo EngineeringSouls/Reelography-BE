@@ -8,38 +8,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="781193da-8775-42e0-8855-de833b151799" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Reelography.Api/Configuration/ServiceConfiguration.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Api/Controllers/NotificationServiceController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Dto/Notification/OtpRequestDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Dto/Notification/OtpValidateRequestDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Notification/Interfaces/IEmailService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Notification/Interfaces/INotificationService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Notification/Interfaces/ISmsService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Notification/Interfaces/ITemplateLoaderService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Notification/Interfaces/IWhatsAppService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Notification/NotificationServiceBase.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Notification/Services/EmailService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Notification/Services/NotificationService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Notification/Services/SmsService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Notification/Services/TemplateLoaderService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Notification/Services/WhatsAppService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Notification/Templates/Email/Otp.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Notification/Templates/SMS/Otp.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Notification/Templates/WhatsApp/Otp.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Shared/Constants/ErrorMessages.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Shared/Constants/NotificationConstants.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Shared/Enums/Notification/NotificationChannelTypeEnum.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Shared/Enums/Notification/NotificationPriorityTypeEnum.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Shared/StaticHelpers/NotificationHelper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Reelography/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Reelography/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reelography.Api/Controllers/AuthController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Reelography.Api/Controllers/AuthController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reelography.Api/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Reelography.Api/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reelography.Api/Reelography.Api.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Reelography.Api/Reelography.Api.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reelography.Api/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/Reelography.Api/appsettings.Development.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reelography.Api/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Reelography.Api/appsettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reelography.sln" beforeDir="false" afterPath="$PROJECT_DIR$/Reelography.sln" afterDir="false" />
-    </list>
+    <list default="true" id="781193da-8775-42e0-8855-de833b151799" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -157,7 +126,7 @@
       <workItem from="1755228023372" duration="10877000" />
       <workItem from="1755248465372" duration="7712000" />
       <workItem from="1755519338461" duration="1910000" />
-      <workItem from="1756008533492" duration="11440000" />
+      <workItem from="1756008533492" duration="11656000" />
     </task>
     <task id="LOCAL-00001" summary="Adding initial changes for entities and migrations">
       <option name="closed" value="true" />
