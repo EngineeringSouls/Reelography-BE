@@ -8,78 +8,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="781193da-8775-42e0-8855-de833b151799" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Reelography.Api/Controllers/Master/OccasionPackageMappingController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Api/Controllers/Photographer/PhotographerController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Api/Controllers/Photographer/PhotographerInstagramController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Api/Controllers/Photographer/PhotographerRegistrationController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Dto/Master/MasterDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Dto/Master/OccasionDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Dto/Master/OccasionPackageMappingDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Dto/Master/PricingUnitDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Dto/Master/ServicePackagesDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Dto/Photographers/Registration/Request/PhotographerAddPackageRequestDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Dto/Photographers/Registration/Request/PhotographerAddPackagesListRequestDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Dto/Photographers/Registration/Request/PhotographerAddPortfolioItemRequestDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Dto/Photographers/Registration/Request/PhotographerAddPortfolioListItemsRequestDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Dto/Photographers/Registration/Request/PhotographerBasicDetailsRequestDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Dto/Photographers/Registration/Request/PhotographerInstagramDetailDTO.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Dto/Photographers/Registration/Request/PhotographerRegistrationStateDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Dto/Photographers/Registration/Response/PhotographerBasicDetailsResponseDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Dto/Photographers/Registration/Response/PhotographerPackageResponseDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Dto/Photographers/Registration/Response/PhotographerPortfolioItemResponseDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Entities/EnumBaseEntity.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Entities/Photographer/PhotographerOnboardingStep.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Service/Contracts/Master/IOccasionPackageMappingService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Service/Contracts/Photographer/IPhotographerRegistrationService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Service/Contracts/Photographer/IPhotographerService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Service/External/BunnyHybridStorageService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Service/External/Contracts/IGooglePlacesService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Service/External/Contracts/IInstagramService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Service/External/Contracts/IStorageService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Service/External/GooglePlacesService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Service/External/InstagramService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Service/Helper/StateToken.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Service/Master/OccasionPackageMappingService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Service/Photographer/PhotographerRegistrationService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Service/Photographer/PhotographerService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Shared/Enums/PhotographerOnboardingStatusEnum.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Shared/Options/BunnyStorageOptions.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Shared/Options/BunnyStreamOptions.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Shared/Options/GooglePlacesOptions.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Shared/Options/InstagramOptions.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Shared/Options/OAuthOptions.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Shared/Records/GooglePlaceDetails.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Shared/Records/GooglePlaceReview.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Shared/Records/InstagramAuthUrls.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Shared/Records/InstagramMediaItem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Shared/Records/InstagramPageInfo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Shared/Records/InstagramUserProfileWithMedia.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Reelography.Shared/Records/StorageDumpResult.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Reelography/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Reelography/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reelography.Api/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Reelography.Api/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reelography.Api/Reelography.Api.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Reelography.Api/Reelography.Api.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reelography.Api/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Reelography.Api/appsettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reelography.Data/Reelography.Data.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Reelography.Data/Reelography.Data.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reelography.Data/ReelographyDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Reelography.Data/ReelographyDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reelography.Data/SeedStaticData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Reelography.Data/SeedStaticData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reelography.Dto/Reelography.Dto.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Reelography.Dto/Reelography.Dto.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reelography.Entities/BaseEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Reelography.Entities/BaseEntity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reelography.Entities/Master/MediaSource.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Reelography.Entities/Master/MediaSource.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reelography.Entities/Master/MediaType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Reelography.Entities/Master/MediaType.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reelography.Entities/Master/OccasionPackageMapping.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Reelography.Entities/Master/OccasionPackageMapping.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reelography.Entities/Master/OccasionType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Reelography.Entities/Master/OccasionType.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reelography.Entities/Master/PricingUnitType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Reelography.Entities/Master/PricingUnitType.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reelography.Entities/Photographer/FavouritePhotographer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Reelography.Entities/Photographer/FavouritePhotographer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reelography.Entities/Photographer/Photographer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Reelography.Entities/Photographer/Photographer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reelography.Entities/Photographer/PhotographerGooglePlaceDetail.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Reelography.Entities/Photographer/PhotographerGooglePlaceDetail.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reelography.Entities/Photographer/PhotographerGooglePlaceReview.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Reelography.Entities/Photographer/PhotographerGooglePlaceReview.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reelography.Entities/Photographer/PhotographerInstagramDetail.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Reelography.Entities/Photographer/PhotographerInstagramDetail.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reelography.Entities/Photographer/PhotographerPackageDetail.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Reelography.Entities/Photographer/PhotographerPackageDetail.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reelography.Entities/Photographer/PhotographerPortfolio.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Reelography.Entities/Photographer/PhotographerPortfolio.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reelography.Service/Reelography.Service.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Reelography.Service/Reelography.Service.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reelography.Shared/Enums/MediaSourceEnum.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Reelography.Shared/Enums/MediaSourceEnum.cs" afterDir="false" />
-    </list>
+    <list default="true" id="781193da-8775-42e0-8855-de833b151799" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -127,24 +56,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Launch Settings Profile.Reelography.Api: http.executor": "Debug",
-    "Attach to Process.1361:JetBrains.Roslyn.Worker.executor": "Debug",
-    "Attach to Process.1734:JetBrains.Roslyn.Worker.executor": "Debug",
-    "Attach to Process.2594:JetBrains.Roslyn.Worker.executor": "Debug",
-    "Attach to Process.75791:JetBrains.Roslyn.Worker.executor": "Debug",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "#9 on InitialMigrationAndEntities",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Launch Settings Profile.Reelography.Api: http.executor&quot;: &quot;Debug&quot;,
+    &quot;Attach to Process.1361:JetBrains.Roslyn.Worker.executor&quot;: &quot;Debug&quot;,
+    &quot;Attach to Process.1734:JetBrains.Roslyn.Worker.executor&quot;: &quot;Debug&quot;,
+    &quot;Attach to Process.2594:JetBrains.Roslyn.Worker.executor&quot;: &quot;Debug&quot;,
+    &quot;Attach to Process.75791:JetBrains.Roslyn.Worker.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature/user-context-setup&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.Reelography.Api: http">
     <configuration name="Reelography.Api: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Reelography.Api/Reelography.Api.csproj" />
@@ -195,6 +124,9 @@
       <workItem from="1754965721826" duration="36666000" />
       <workItem from="1755097081343" duration="32164000" />
       <workItem from="1755228023372" duration="10877000" />
+      <workItem from="1755248465372" duration="7712000" />
+      <workItem from="1755519338461" duration="1910000" />
+      <workItem from="1756008533492" duration="11656000" />
     </task>
     <task id="LOCAL-00001" summary="Adding initial changes for entities and migrations">
       <option name="closed" value="true" />
@@ -243,30 +175,96 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
-          <properties exception="System.OperationCanceledException" breakIfHandledByOtherCode="false" displayValue="System.OperationCanceledException" />
-          <option name="timeStamp" value="1" />
-        </breakpoint>
-        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
-          <properties exception="System.Threading.Tasks.TaskCanceledException" breakIfHandledByOtherCode="false" displayValue="System.Threading.Tasks.TaskCanceledException" />
-          <option name="timeStamp" value="2" />
-        </breakpoint>
-        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
-          <properties exception="System.Threading.ThreadAbortException" breakIfHandledByOtherCode="false" displayValue="System.Threading.ThreadAbortException" />
-          <option name="timeStamp" value="3" />
-        </breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Reelography.Service/External/BunnyHybridStorageService.cs</url>
-          <line>90</line>
-          <properties documentPath="$PROJECT_DIR$/Reelography.Service/External/BunnyHybridStorageService.cs" containingFunctionPresentation="Method 'PutVideoUsingRemoteUrlAsync'">
+          <url>file://$PROJECT_DIR$/Reelography.Notification/Services/NotificationService.cs</url>
+          <line>20</line>
+          <properties documentPath="$PROJECT_DIR$/Reelography.Notification/Services/NotificationService.cs" containingFunctionPresentation="Method 'SendOtpNotificationAsync'">
             <startOffsets>
-              <option value="4455" />
+              <option value="721" />
             </startOffsets>
             <endOffsets>
-              <option value="4516" />
+              <option value="767" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="40" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Reelography.Api/Controllers/NotificationServiceController.cs</url>
+          <line>34</line>
+          <properties documentPath="$PROJECT_DIR$/Reelography.Api/Controllers/NotificationServiceController.cs" containingFunctionPresentation="Method 'RequestOtp'">
+            <startOffsets>
+              <option value="1083" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1084" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Reelography.Api/Controllers/NotificationServiceController.cs</url>
+          <line>49</line>
+          <properties documentPath="$PROJECT_DIR$/Reelography.Api/Controllers/NotificationServiceController.cs" containingFunctionPresentation="Method 'ValidateOtp'">
+            <startOffsets>
+              <option value="1663" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1664" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Reelography.Notification/Services/SmsService.cs</url>
+          <line>13</line>
+          <properties documentPath="$PROJECT_DIR$/Reelography.Notification/Services/SmsService.cs" containingFunctionPresentation="Method 'SendOtpNotificationAsync'">
+            <startOffsets>
+              <option value="547" />
+            </startOffsets>
+            <endOffsets>
+              <option value="548" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Reelography.Notification/Services/TemplateLoaderService.cs</url>
+          <line>10</line>
+          <properties documentPath="$PROJECT_DIR$/Reelography.Notification/Services/TemplateLoaderService.cs" containingFunctionPresentation="Method 'LoadTemplate'">
+            <startOffsets>
+              <option value="430" />
+            </startOffsets>
+            <endOffsets>
+              <option value="541" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Reelography.Notification/Services/NotificationService.cs</url>
+          <line>44</line>
+          <properties documentPath="$PROJECT_DIR$/Reelography.Notification/Services/NotificationService.cs" containingFunctionPresentation="Method 'ValidateOtpRequestAsync'">
+            <startOffsets>
+              <option value="1758" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1804" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Reelography.Notification/Services/SmsService.cs</url>
+          <line>25</line>
+          <properties documentPath="$PROJECT_DIR$/Reelography.Notification/Services/SmsService.cs" containingFunctionPresentation="Method 'SendOtpNotificationAsync'">
+            <startOffsets>
+              <option value="996" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1036" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -1,6 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using Reelography.Entities;
+using Reelography.Entities.User;
 using Reelography.Shared.Enums;
+using Reelography.Shared.Enums.User;
 using Reelography.Shared.Extensions;
 
 namespace Reelography.Data;
@@ -18,6 +20,8 @@ public class SeedStaticData
         SeedServicePackageTypes(modelBuilder);
         SeedOccasionPackageMappings(modelBuilder);
         SeedPhotographerOnboardingSteps(modelBuilder);
+        
+        SeedUserData(modelBuilder);
     }
     
     private static void SeedOccasionTypes(ModelBuilder modelBuilder)
@@ -153,4 +157,85 @@ public class SeedStaticData
                 }).ToArray()
         );
     }
+
+
+
+    #region User
+
+    private static void SeedUserData(ModelBuilder modelBuilder)
+    {
+        SeedAuthUser(modelBuilder);
+        SeedAuthUserRoles(modelBuilder);
+    }
+
+    private static void SeedAuthUser(ModelBuilder modelBuilder)
+    {
+        var adminUser = new AuthUser()
+        {
+            Id = 1,
+            Email = "admin@admin.com",
+            UserName = "admin",
+            NormalizedEmail = "ADMIN@ADMIN.COM",
+            NormalizedUserName = "ADMIN@ADMIN.COM",
+            IsActive = true,
+            FirstName = "Admin",
+            LastName = "Name",
+            EmailConfirmed = true,
+        };
+        
+        var photographerUser = new AuthUser()
+        {
+            Id = 2,
+            Email = "Photographer@Studio.com",
+            UserName = "Photographer",
+            NormalizedEmail = "Photographer@Studio.COM",
+            NormalizedUserName = "Photographer@Studio.COM",
+            IsActive = true,
+            FirstName = "Photographer",
+            LastName = "Name",
+            EmailConfirmed = true,
+        };
+        
+        var user = new AuthUser()
+        {
+            Id = 3,
+            Email = "User@gmail.com",
+            UserName = "User",
+            NormalizedEmail = "User@Gmail.com",
+            NormalizedUserName = "User@gmail.com",
+            IsActive = true,
+            FirstName = "User",
+            LastName = "Name",
+            EmailConfirmed = true,
+        };
+        modelBuilder.Entity<AuthUser>().HasData(adminUser, photographerUser, user);
+    }
+    private static void SeedAuthUserRoles(ModelBuilder modelBuilder)
+    {
+        int id = 0;
+        modelBuilder.Entity<AuthUserRole>().HasData(
+            new AuthUserRole()
+            {
+                Id = ++id,
+                RoleName = AuthUserRoleEnum.Admin.GetDescription(),
+                AuthUserId = 1,
+                Role = AuthUserRoleEnum.Admin,
+            },
+            new AuthUserRole()
+            {
+                Id = ++id,
+                RoleName = AuthUserRoleEnum.Photographer.GetDescription(),
+                AuthUserId = 2,
+                Role = AuthUserRoleEnum.Photographer,
+            },
+        new AuthUserRole()
+            {
+                Id = ++id,
+                RoleName = AuthUserRoleEnum.User.GetDescription(),
+                AuthUserId = 3,
+                Role = AuthUserRoleEnum.User,
+            }
+            );
+    }
+    #endregion
 }
